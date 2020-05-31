@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "AplicacionMusica": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AplicacionMusica"
+    }
+  },
+  "defaultProject": "AplicacionMusica",
+  "cli": {
+    "analytics": "813d0322-1c79-4e2c-b577-be7d85031c8b"
+  }
 }

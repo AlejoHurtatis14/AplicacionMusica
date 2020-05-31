@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  idCliente: '719003813794-uvajjr2mg6q55ml0jakouko0hj78s4hn.apps.googleusercontent.com',
+  redireccionamientoLogin: 'http://localhost:4200/',
+  tipoRespuesta: 'code',
+  scope: 'https://www.googleapis.com/auth/userinfo.email',
 };
 
 /*
@@ -14,3 +18,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+//URL peticion de acceso a plataforma con api de google
+//https://accounts.google.com/o/oauth2/v2/auth?client_id=719003813794-uvajjr2mg6q55ml0jakouko0hj78s4hn.apps.googleusercontent.com&redirect_uri=http://localhost:4200/&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email
