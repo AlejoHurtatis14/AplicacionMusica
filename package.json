@@ -1,6 +1,5 @@
 {
   "name": "aplicacion-musica",
-  "start": "ng serve --ssl --ssl-key ./certificates/localhost.key  --ssl-cert ./certificates/localhost.crt",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,6 +19,8 @@
     "@angular/platform-browser": "~9.0.5",
     "@angular/platform-browser-dynamic": "~9.0.5",
     "@angular/router": "~9.0.5",
+    "angularfire2": "^5.4.2",
+    "firebase": "^7.15.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

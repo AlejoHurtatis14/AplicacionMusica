@@ -4,10 +4,16 @@
 
 export const environment = {
   production: false,
-  idCliente: '719003813794-uvajjr2mg6q55ml0jakouko0hj78s4hn.apps.googleusercontent.com',
-  redireccionamientoLogin: 'http://localhost:4200/',
-  tipoRespuesta: 'code',
-  scope: 'https://www.googleapis.com/auth/userinfo.email',
+  firebase: {
+    apiKey: "AIzaSyApcJkMi332lEBFq0pqQnw2VpaQMmOfGnw",
+    authDomain: "aplicacionmusica.firebaseapp.com",
+    databaseURL: "https://aplicacionmusica.firebaseio.com",
+    projectId: "aplicacionmusica",
+    storageBucket: "aplicacionmusica.appspot.com",
+    messagingSenderId: "719003813794",
+    appId: "1:719003813794:web:16abd717615fb181f154fb",
+    measurementId: "G-JGR5HV6SW8"
+  }
 };
 
 /*
@@ -20,4 +26,4 @@ export const environment = {
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 //URL peticion de acceso a plataforma con api de google
-//https://accounts.google.com/o/oauth2/v2/auth?client_id=719003813794-uvajjr2mg6q55ml0jakouko0hj78s4hn.apps.googleusercontent.com&redirect_uri=http://localhost:4200/&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email
+//https://accounts.google.com/o/oauth2/v2/auth?client_id=719003813794-uvajjr2mg6q55ml0jakouko0hj78s4hn.apps.googleusercontent.com&redirect_uri=https://localhost:4200/&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email

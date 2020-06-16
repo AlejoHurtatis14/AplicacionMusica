@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-home',
@@ -8,17 +10,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
-
-  ngOnInit(): void {
+  constructor(private dataBase: AngularFirestore, private fireAuth: AngularFireAuth) {
+    this.fireAuth.authState.subscribe(user => {
+      console.log("User ", user);
+      if (user) {
+        console.log("User 2 ", user);
+      }
+    });
   }
 
-  execute() {
-    this.httpClient.get('https://accounts.google.com/o/oauth2/v2/auth?client_id=719003813794-uvajjr2mg6q55ml0jakouko0hj78s4hn.apps.googleusercontent.com&redirect_uri=https://localhost:4200/&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email').subscribe(resp => {
-      console.log("respuesta original ", resp);
-    }, errro => {
-      console.log("Error ", errro);
-    })
+  ngOnInit(): void { }
+
+  executeLogin() {
+    this.fireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+  }
+
+  logOut() {
+    this.fireAuth.auth.signOut();
   }
 
 }
