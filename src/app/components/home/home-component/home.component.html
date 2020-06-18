@@ -1,2 +1,52 @@
-<p>home works!</p>
-<button (click)="executeLogin()" type="button">Aceptar</button>
+<div class="container-fluid d-flex justify-content-center align-items-center row h-100">
+    <mat-card class="col-11 col-sm-8 col-md-4 h-75">
+        <mat-card-header class="h-25 d-flex align-items-center justify-content-center">
+            <!-- <div mat-card-avatar>
+                <span class="material-icons">
+                    album
+                </span>
+            </div> -->
+            <mat-card-title class="w-90 text-center">Ingrese sus datos</mat-card-title>
+            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        </mat-card-header>
+        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+        <mat-card-content class="h-50 d-flex align-items-center">
+            <div class="row">
+                <mat-form-field appearance="legacy" class="col-12">
+                    <mat-label>Correo electronico</mat-label>
+                    <input matInput placeholder="Placeholder">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="legacy" class="col-12">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <div class="col-12">
+                    <button mat-button class="button-ingresar">
+                        <span>Ingresar</span>
+                    </button>
+                </div>
+                <div class="col-12 text-center mt-2">
+                    <a href="#">
+                        <span>Olvide mi contraseña</span>
+                    </a>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions class="h-25">
+            <div class="container-fluid d-flex justify-content-around">
+                <button (click)="executeLogin('Google')" mat-button>
+                    <img width="100%" height="100%" src="../../../../assets/icons/login/google.svg" alt="Google">
+                </button>
+                <button mat-button (click)="executeLogin('Facebook')">
+                    <img width="100%" height="100%" src="../../../../assets/icons/login/facebook.svg" alt="Google">
+                </button>
+                <button (click)="logOut()">cerrar</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>

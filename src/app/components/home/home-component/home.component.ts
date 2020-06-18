@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
+import { LoginService } from 'src/app/shared/services/login.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,13 @@ import * as firebase from 'firebase';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private dataBase: AngularFirestore, private fireAuth: AngularFireAuth) {
+  hide: boolean = false;
+
+  constructor(
+    private dataBase: AngularFirestore,
+    private fireAuth: AngularFireAuth,
+    private loginService: LoginService
+  ) {
     this.fireAuth.authState.subscribe(user => {
       console.log("User ", user);
       if (user) {
@@ -21,12 +28,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  executeLogin() {
-    this.fireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+  executeLogin(type) {
+    this.loginService.loginUser(type);
   }
 
   logOut() {
-    this.fireAuth.auth.signOut();
+    this.loginService.logOut();
   }
 
 }
